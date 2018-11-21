@@ -154,6 +154,24 @@ void bubble_sort(int arr[], int len) {
         }
     }
 }
+
+void merge(int a[], int len_a, int b[], int len_b, int c[]) {
+    int i = 0, j = 0, k = 0;
+    while (i < len_a && j < len_b) {
+        if (a[i] < b[j]) {
+            c[k++] = a[i++];
+        } else {
+            c[k++] = b[j++];
+        }
+    }
+    while (i < len_a) {
+        c[k++] = a[i++];
+    }
+    while (j < len_b) {
+        c[k++] = b[j++];
+    }
+}
+
 int main(int argc, const char * argv[]) {
     {
         /*
@@ -205,9 +223,16 @@ int main(int argc, const char * argv[]) {
         cout << isValid(s) << endl;
     }
     {
-        int arr[] = { 22, 34, 3, 32, 82, 55, 89, 50, 37, 5, 64, 35, 9, 70 };
-        int len = (int) sizeof(arr) / sizeof(*arr);
-        bubble_sort(arr, len);
+//        int arr[] = { 22, 34, 3, 32, 82, 55, 89, 50, 37, 5, 64, 35, 9, 70 };
+//        int len = (int) sizeof(arr) / sizeof(*arr);
+//        bubble_sort(arr, len);
+        
+        int arr1[] = { 2, 6, 14, 15, 26, 37 };
+        int arr2[] = { 1, 6, 7, 10, 12 };
+        int len = sizeof(arr1)/sizeof(int) + sizeof(arr2)/sizeof(int);
+        int arr[len];
+        merge(arr1, sizeof(arr1)/sizeof(int), arr2, sizeof(arr2)/sizeof(int), arr);
+        cout << "-------------" << endl;
         for (int i = 0; i < len; i++) {
             cout << arr[i] << "\t";
         }

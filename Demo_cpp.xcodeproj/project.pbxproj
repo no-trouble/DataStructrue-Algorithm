@@ -11,6 +11,7 @@
 		82860D5121894D6900D9C95C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82860D5021894D6900D9C95C /* main.cpp */; };
 		82860D5721897D0100D9C95C /* LinkQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82860D5521897D0100D9C95C /* LinkQueue.cpp */; };
 		82860D5A218980F600D9C95C /* SeqQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82860D58218980F600D9C95C /* SeqQueue.cpp */; };
+		8296132D21A4F89000C5BCCA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8296132C21A4F89000C5BCCA /* main.c */; };
 		82D11659217F46020053F098 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82D11658217F46020053F098 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		82860D4C21894D6900D9C95C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		8296132821A4F89000C5BCCA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -53,6 +63,8 @@
 		82860D5621897D0100D9C95C /* LinkQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkQueue.hpp; sourceTree = "<group>"; };
 		82860D58218980F600D9C95C /* SeqQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeqQueue.cpp; sourceTree = "<group>"; };
 		82860D59218980F600D9C95C /* SeqQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SeqQueue.hpp; sourceTree = "<group>"; };
+		8296132A21A4F89000C5BCCA /* BinaraySearch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaraySearch; sourceTree = BUILT_PRODUCTS_DIR; };
+		8296132C21A4F89000C5BCCA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		82D11655217F46020053F098 /* Demo_cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo_cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D11658217F46020053F098 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		82D11661218055620053F098 /* LinkedList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
@@ -68,6 +80,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		82860D4B21894D6900D9C95C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8296132721A4F89000C5BCCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,12 +123,21 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
+		8296132B21A4F89000C5BCCA /* BinaraySearch */ = {
+			isa = PBXGroup;
+			children = (
+				8296132C21A4F89000C5BCCA /* main.c */,
+			);
+			path = BinaraySearch;
+			sourceTree = "<group>";
+		};
 		82D1164C217F46020053F098 = {
 			isa = PBXGroup;
 			children = (
 				82D11657217F46020053F098 /* Demo_cpp */,
 				82860D4F21894D6900D9C95C /* Queue */,
 				828223E521913ACA00F016EF /* Sort */,
+				8296132B21A4F89000C5BCCA /* BinaraySearch */,
 				82D11656217F46020053F098 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +148,7 @@
 				82D11655217F46020053F098 /* Demo_cpp */,
 				82860D4E21894D6900D9C95C /* Queue */,
 				828223E421913ACA00F016EF /* Sort */,
+				8296132A21A4F89000C5BCCA /* BinaraySearch */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +200,23 @@
 			productReference = 82860D4E21894D6900D9C95C /* Queue */;
 			productType = "com.apple.product-type.tool";
 		};
+		8296132921A4F89000C5BCCA /* BinaraySearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8296133021A4F89000C5BCCA /* Build configuration list for PBXNativeTarget "BinaraySearch" */;
+			buildPhases = (
+				8296132621A4F89000C5BCCA /* Sources */,
+				8296132721A4F89000C5BCCA /* Frameworks */,
+				8296132821A4F89000C5BCCA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinaraySearch;
+			productName = BinaraySearch;
+			productReference = 8296132A21A4F89000C5BCCA /* BinaraySearch */;
+			productType = "com.apple.product-type.tool";
+		};
 		82D11654217F46020053F098 /* Demo_cpp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82D1165C217F46020053F098 /* Build configuration list for PBXNativeTarget "Demo_cpp" */;
@@ -203,6 +249,9 @@
 					82860D4D21894D6900D9C95C = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					8296132921A4F89000C5BCCA = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					82D11654217F46020053F098 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -223,6 +272,7 @@
 				82D11654217F46020053F098 /* Demo_cpp */,
 				82860D4D21894D6900D9C95C /* Queue */,
 				828223E321913ACA00F016EF /* Sort */,
+				8296132921A4F89000C5BCCA /* BinaraySearch */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +293,14 @@
 				82860D5121894D6900D9C95C /* main.cpp in Sources */,
 				82860D5721897D0100D9C95C /* LinkQueue.cpp in Sources */,
 				82860D5A218980F600D9C95C /* SeqQueue.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8296132621A4F89000C5BCCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8296132D21A4F89000C5BCCA /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +346,26 @@
 			name = Debug;
 		};
 		82860D5321894D6900D9C95C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFT9U2FQZ7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8296132E21A4F89000C5BCCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFT9U2FQZ7;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8296132F21A4F89000C5BCCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +521,15 @@
 			buildConfigurations = (
 				82860D5221894D6900D9C95C /* Debug */,
 				82860D5321894D6900D9C95C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8296133021A4F89000C5BCCA /* Build configuration list for PBXNativeTarget "BinaraySearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8296132E21A4F89000C5BCCA /* Debug */,
+				8296132F21A4F89000C5BCCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

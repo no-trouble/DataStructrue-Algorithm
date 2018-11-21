@@ -158,17 +158,93 @@ void selection_sort(int arr[], int len) {
     }
 }
 
+/*
+ 归并排序： 分治思想，通过递归技巧实现
+ 递推公式: merge_sort(p...r) = merge(merge_sort(p...q), merge_sort(q+1...r))
+ 终止条件: p >= r
+ 
+ merge_sort(arr)  0..<10
+ arr1 = merge_sort(arr[0]...arr[4])
+ arr2 = merge_sort(arr[5]...arr[9])
+ merge(arr1, arr2)
+ */
+void merge_sort_imp(int arr[], int p, int r);
+void merge(int arr[], int p, int q, int r);
+void merge_sort(int arr[], int len) {
+    merge_sort_imp(arr, 0, len-1);
+}
+
+void merge_sort_imp(int arr[], int p, int r) {
+    if (p >= r)  {
+        return;
+    }
+    int q = (p+r)/2;
+    merge_sort_imp(arr, p, q);
+    merge_sort_imp(arr, q+1, r);
+    merge(arr, p, q, r);
+}
+
+void merge(int arr[], int p, int q, int r) {
+    int *tmp = (int *)malloc(sizeof(int)*(r-p+1));
+    if (!tmp) {
+        abort();
+    }
+    int i = p, j = q+1, k = 0;
+    while (i < q && j < r) {
+        if (arr[i] < arr[j]) {
+            tmp[k++] = arr[i++];
+        } else {
+            tmp[k++] = arr[j++];
+        }
+    }
+    while (i < p) {
+        tmp[k++] = arr[i++];
+    }
+    while (j < r) {
+        tmp[k++] = arr[j++];
+    }
+    for (int i = 0; i<=r; i++) {
+        arr[i] = tmp[i];
+    }
+}
+
+void mergearray(int a[], int first, int mid, int last, int temp[]) {
+    int i = first, j = mid + 1;
+    int m = mid,   n = last;
+    int k = 0;
+    
+    while (i <= m && j <= n)
+    {
+        if (a[i] <= a[j])
+            temp[k++] = a[i++];
+        else
+            temp[k++] = a[j++];
+    }
+    
+    while (i <= m)
+        temp[k++] = a[i++];
+    
+    while (j <= n)
+        temp[k++] = a[j++];
+    
+    for (i = 0; i < k; i++)
+        a[first + i] = temp[i];
+}
+
 int main(int argc, const char * argv[]) {
     
-    int arr[] = { 3, 5, 4, 1, 2, 6 };
+//    int arr[] = { 3, 5, 4, 1, 2, 6 };
 //    int arr[] = { 1, 2, 3, 4, 5, 6, 5 };
-//    int arr[] = { 6, 5, 4, 3, 2, 1 };
+    int arr[] = { 6, 5, 4, 3, 2, 1, 7, 8 };
     int len = (int) sizeof(arr) / sizeof(*arr);
     printArray(arr, len);
     
 //    bubble_sort(arr, len);
 //    insertion_sort(arr, len);
-    selection_sort(arr, len);
+//    selection_sort(arr, len);
+//    mergesort2(arr, 0, len-1, arr2);
+    merge_sort(arr, len);
+    
     printArray(arr, len);
     
     return 0;
