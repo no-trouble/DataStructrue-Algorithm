@@ -231,6 +231,27 @@ void mergearray(int a[], int first, int mid, int last, int temp[]) {
         a[first + i] = temp[i];
 }
 
+// 快速排序
+void quickSort(int *a, int low, int high) {
+    if (low < high) {
+        int l = low, h = high;
+        int pivot = a[low];
+        while (l < h) {
+            while (a[h] >= pivot && l < h) {
+                h--;
+            }
+            a[l] = a[h];
+            while (a[l] <= pivot && l < h) {
+                l++;
+            }
+            a[h] = a[l];
+        }
+        a[l] = pivot;
+        quickSort(a, low, l-1);
+        quickSort(a, l+1, high);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
 //    int arr[] = { 3, 5, 4, 1, 2, 6 };
@@ -243,7 +264,8 @@ int main(int argc, const char * argv[]) {
 //    insertion_sort(arr, len);
 //    selection_sort(arr, len);
 //    mergesort2(arr, 0, len-1, arr2);
-    merge_sort(arr, len);
+//    merge_sort(arr, len);
+    quickSort(arr, 0, len-1);
     
     printArray(arr, len);
     
