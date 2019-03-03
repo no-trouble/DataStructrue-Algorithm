@@ -252,6 +252,20 @@ void quickSort(int *a, int low, int high) {
     }
 }
 
+int binarySearch(int *a, int low, int high, int find) {
+    if (low <= high) {
+        int mid = (low+high)/2;
+        if (find == a[mid]) {
+            return mid;
+        } else if (find > a[mid]) {
+            return binarySearch(a, mid+1, high, find);
+        } else {
+            return binarySearch(a, low, mid-1, find);
+        }
+    }
+    return -1;
+}
+
 int main(int argc, const char * argv[]) {
     
 //    int arr[] = { 3, 5, 4, 1, 2, 6 };
@@ -266,8 +280,10 @@ int main(int argc, const char * argv[]) {
 //    mergesort2(arr, 0, len-1, arr2);
 //    merge_sort(arr, len);
     quickSort(arr, 0, len-1);
-    
     printArray(arr, len);
+
+    int idx = binarySearch(arr, 0, len-1, 8);
+    printf("idx = %d\n", idx);
     
     return 0;
 }
